@@ -7,11 +7,11 @@ typedef struct rgb rgb;
 typedef uint32_t pixel;
 typedef struct PixelBuffer PixelBuffer;
 
-typedef struct PixelBuffer {
+struct PixelBuffer {
     pixel *pixels;
     int width;
     int height;
-} PixelBuffer;
+};
 
 void blit(PixelBuffer *src, PixelBuffer* dest, size_t offsetX, size_t offsetY);
 
