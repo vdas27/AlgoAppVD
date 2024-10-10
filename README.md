@@ -34,11 +34,13 @@ and when the color key pixels were dispersed unconnected throughout the image. I
 
 ./main simple2.ppm simple2gs.ppm
 
-The results worked as expected. Some of the green did not go away because they did not match the same shade of green as the rest of the
-greenscreen.
+The results worked as expected. 
 
 For the last image, a greenscreen of a minion found online, I tested it without offset of x + 300 and y - 400  to test how the function would 
 run on larger sized arrays of pixels. I used the following command:
+
 ./main minion.ppm miniongs.ppm 300 -400
-Again the results worked as expected.
+
+Again the results worked as expected.Some of the green did not go away because they did not match the same shade of green as the rest of the
+greenscreen.
 All of my test images and results are in the repo.
