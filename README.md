@@ -16,18 +16,24 @@ which would read an image file, blit it accordingly, and then either create or w
 one which would read a P3 PPM and convert it to the src PixelBuffer, and then one which turned the dest PixelBuffer into a P3 PPM
 after it had been passed through the blitting function.
 For this program the functions assume that a P3 PPM file format is used for the images. The command line function works like this:
+
 ./main [source ppm file] [destination ppm file (either exists or to be created)] [Optional: offsetX] [Optional: offsetY];
+
 I put in three images to test which I have included in this repo: simple1.ppm, simple2.ppm, and minion.ppm(a generic green
 screen image I found off the internet). I also changed the colorkey value in option3.c in order to match the green of the image
 I found online. I created the two simple ppm files manually, simple1 containg a blue square surrounded by green and simple2 
 containing a blue and red square surrounded by green and containing a smaller green square within it. For the first simple,
 
 I tested it by trying out the offset parameters to move it to the right by 2 pixels, and up 6 pixels with the following command:
+
 ./main simple1.ppm simple1gs.ppm 2 -6
+
 Looking at the result, all of the green was removed, and the image was properly clipped if the offset brought it outside the frame.
 For simple2 I tested it without an offset to test if the program could handle when more than one color was outside the color key,
 and when the color key pixels were dispersed unconnected throughout the image. I used the following command:
+
 ./main simple2.ppm simple2gs.ppm
+
 The results worked as expected. Some of the green did not go away because they did not match the same shade of green as the rest of the
 greenscreen.
 
