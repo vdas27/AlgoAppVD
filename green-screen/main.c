@@ -46,7 +46,7 @@ void write_image_p3(FILE* f, PixelBuffer *img) {
 
 int main(int argc, char *argv[]) {
     PixelBuffer *src;
-    
+
     if (argv[1]){
         FILE *f = fopen(argv[1], "r");
         src = read_image_p3(f);
@@ -65,10 +65,10 @@ int main(int argc, char *argv[]) {
     dest->width = src->width;
     dest->pixels = (pixel *)malloc(sizeof(pixel) * dest->width * dest->height);
     
-    int offsetx = (argv[3]) ? atoi(argv[3]) : 0;
-    int offsety = (argv[4]) ? atoi(argv[4]) : 0;
+    int offsetX = (argv[3]) ? atoi(argv[3]) : 0;
+    int offsetY = (argv[4]) ? atoi(argv[4]) : 0;
 
-    blit(src, dest, offsetx, offsety);
+    blit(src, dest, offsetX, offsetY);
     
     if (argv[2]) {
         FILE *g = fopen(argv[2], "w");
